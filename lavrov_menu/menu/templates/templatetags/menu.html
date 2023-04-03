@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><span style="color:blue">UP</span>TRADED</a>
+        <a class="navbar-brand" href="/"><span style="color:blue">UP</span>TRADED</a>
 
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
@@ -19,13 +19,13 @@
 
                             <ul class="dropdown-menu" aria-labelledby="dropdown03">
                                 {% for m_item in menu_item.get_children %}
-                                    <li><a class="dropdown-item" href="#">{{ m_item }}</a></li>
+                                    <li><a class="dropdown-item" type="button" href="{% url 'pages:pages' 1 %}">{{ m_item }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="#">{{ menu_item }}</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'pages:pages' 1 %}">{{ menu_item }}</a>
                         </li>
                     {% endif %}
 

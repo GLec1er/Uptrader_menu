@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from mptt.models import MPTTModel, TreeForeignKey
 
 
@@ -17,3 +18,7 @@ class MenuItem(MPTTModel):
     class Meta:
         verbose_name = 'Пункт меню'
         verbose_name_plural = 'Пункты меню'
+
+    def get_absolute_url(self):
+        return reverse('pages')
+
